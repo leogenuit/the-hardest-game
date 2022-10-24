@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: dodgerblue;
+  width: 100%;
+  text-align: center;
+}
+
+#game-board {
+  background: white;
+  width: 80%;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+}
