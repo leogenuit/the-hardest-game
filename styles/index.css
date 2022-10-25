@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d6bbf1;
+  width: 100%;
+  text-align: center;
+}
+
+#game-board {
+  background-image: url("../styles/img/damier.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+}
