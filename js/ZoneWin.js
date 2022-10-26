@@ -9,7 +9,7 @@ export default class ZoneWin {
     };
   }
   draw() {
-    this.c.fillStyle = "#a6fda1";
+    this.c.fillStyle = "#00ff2b";
     this.c.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 }

@@ -3,14 +3,14 @@ export default class Ball {
     this.c = c;
     this.player = player;
     this.velocity = {
-      x: 7,
+      x: 14,
       y: 0,
     };
     this.image = null;
     this.width = 40;
     this.height = 40;
     this.image = new Image();
-    this.image.src = "./../styles/img/ball.png";
+    this.image.src = "./../styles/img/balls.png";
 
     this.position = {
       x: position.x,

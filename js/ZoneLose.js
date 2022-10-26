@@ -10,7 +10,7 @@ export default class ZoneLose {
       });
   }
   draw() {
-    this.c.fillStyle = "#000";
+    this.c.fillStyle = "black";
     this.c.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 }

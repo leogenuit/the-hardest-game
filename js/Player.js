@@ -17,8 +17,17 @@ export default class Player {
     };
   }
   draw() {
+    this.c.beginPath();
     this.c.fillStyle = "#fd0201"; // Le player sera un carré rouge
+    this.c.strokeStyle = "black";
+    this.c.lineWidth = 4;
     this.c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    this.c.strokeRect(
+      this.position.x,
+      this.position.y,
+      this.width,
+      this.height
+    );
   }
 
   moveUp() {
@@ -77,7 +86,7 @@ document.addEventListener("keydown", ({ key }) => {
   switch (key) {
     case "ArrowLeft":
       keys.ArrowLeft.pressed = true;
-      // console.log("lefttttt");
+      console.log("lefttttt");
       break;
     case "ArrowRight":
       keys.ArrowRight.pressed = true;
