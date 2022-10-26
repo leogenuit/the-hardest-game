@@ -10,7 +10,7 @@ export default class Ball {
     this.width = 40;
     this.height = 40;
     this.image = new Image();
-    this.image.src = "./../styles/img/balls.png";
+    this.image.src = "../styles/img/balls.png";
 
     this.position = {
       x: position.x,
