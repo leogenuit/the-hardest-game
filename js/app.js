@@ -17,6 +17,9 @@ const deathTotal = document.querySelector("#death-amount");
 const levelActual = document.querySelector("#level-up");
 const audio = document.querySelector("#audio");
 const winScreen = document.querySelector("#win-screen");
+const getSurprise = document.querySelector("#get-surprise");
+const surprise = document.querySelector("#surprise");
+const exorciste = document.querySelector("#exorciste");
 
 let deathCounter = 0;
 let levelCounter = 1;
@@ -25,8 +28,8 @@ let frameId = null;
 function showWinScreen() {
   game.classList.add("hidden");
   winScreen.classList.remove("hidden");
-  animationLoop();
 }
+
 playTheGame.addEventListener("click", (e) => {
   e.preventDefault();
   audio.play();
@@ -40,7 +43,15 @@ playTheRules.addEventListener("click", (e) => {
   e.preventDefault();
   main.classList.add("hidden");
   rules.classList.remove("hidden");
-  animationLoop();
+  // animationLoop();
+});
+
+getSurprise.addEventListener("click", (e) => {
+  e.preventDefault();
+  audio.pause();
+  exorciste.play();
+  winScreen.classList.add("hidden");
+  surprise.classList.remove("hidden");
 });
 
 world.width = window.innerWidth * 0.8;
@@ -61,7 +72,7 @@ function finishedLevel() {
     player.position.x < zoneWin.position.x + zoneWin.width - player.width &&
     player.position.x > zoneWin.position.x
   ) {
-    if (levelCounter === 5) {
+    if (levelCounter === 1) {
       console.log(frameId);
       cancelAnimationFrame(frameId);
       showWinScreen();

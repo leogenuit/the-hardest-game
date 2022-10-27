@@ -126,3 +126,12 @@ h3 {
   width: 200px;
   height: 60px;
 }
+#surprise img {
+  width: 100vh;
+  height: 100vh;
+}
+#final-img {
+  width: 200px;
+  height: 60px;
+  margin-bottom: 10px;
+}
