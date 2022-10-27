@@ -72,7 +72,7 @@ function finishedLevel() {
     player.position.x < zoneWin.position.x + zoneWin.width - player.width &&
     player.position.x > zoneWin.position.x
   ) {
-    if (levelCounter === 1) {
+    if (levelCounter === 5) {
       console.log(frameId);
       cancelAnimationFrame(frameId);
       showWinScreen();
