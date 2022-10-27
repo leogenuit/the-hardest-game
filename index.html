@@ -11,6 +11,7 @@
   </head>
   <body>
     <!-- MAIN ************************************************* -->
+    <audio id="audio" src="./audio/audio.mp3" hidden></audio>
     <section id="main">
       <img id="title" src="./styles/img/titre.png" alt="" />
       <div class="container">
@@ -33,7 +34,8 @@
       <a href="index.html"
         ><img id="image-back" src="./styles/img/back.png" alt=""
       /></a>
-      <h3>DEATHS :<span id="death-amount">0</span></h3>
+      <h2 class="level-count">LEVEL : <span id="level-up">1</span></h2>
+      <h3>DEATHS : <span id="death-amount">0</span></h3>
     </section>
 
     <!-- RULES  ************************************************* -->
@@ -46,6 +48,14 @@
       </div>
       <a id="play-the-rules" href="index.html"
         ><img class="rules-img" src="./styles/img/back-to-menu.png" alt=""
+      /></a>
+    </section>
+    <section class="hidden" id="win-screen">
+      <div class="final-screen">
+        <p id="congratulations">CONGRATULATIONS 🥳</p>
+      </div>
+      <a href="index.html"
+        ><img id="back-to-menu" src="./styles/img/back-to-menu.png" alt=""
       /></a>
     </section>
   </body>

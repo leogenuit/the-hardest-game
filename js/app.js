@@ -14,10 +14,22 @@ const game = document.querySelector("#game");
 const main = document.querySelector("#main");
 const rules = document.querySelector("#rules");
 const deathTotal = document.querySelector("#death-amount");
-let deathCounter = 0;
+const levelActual = document.querySelector("#level-up");
+const audio = document.querySelector("#audio");
+const winScreen = document.querySelector("#win-screen");
 
+let deathCounter = 0;
+let levelCounter = 1;
+let frameId = null;
+
+function showWinScreen() {
+  game.classList.add("hidden");
+  winScreen.classList.remove("hidden");
+  animationLoop();
+}
 playTheGame.addEventListener("click", (e) => {
   e.preventDefault();
+  audio.play();
   main.classList.add("hidden");
   game.classList.remove("hidden");
   createNewLevel();
@@ -49,7 +61,15 @@ function finishedLevel() {
     player.position.x < zoneWin.position.x + zoneWin.width - player.width &&
     player.position.x > zoneWin.position.x
   ) {
+    if (levelCounter === 5) {
+      console.log(frameId);
+      cancelAnimationFrame(frameId);
+      showWinScreen();
+      return;
+    }
     newLevel();
+    levelCounter += 1;
+    levelActual.textContent = levelCounter;
   }
 }
 function respawn() {
@@ -70,6 +90,7 @@ function deadFence() {
 function newLevel() {
   levelIndex++;
   createNewLevel();
+
   respawn();
 }
 function deadBall(ball) {
@@ -164,9 +185,9 @@ const animationLoop = () => {
     deadBall(ball);
   }
   bounceBall();
-  finishedLevel();
   deadFence();
 
   frames++;
-  requestAnimationFrame(animationLoop);
+  frameId = requestAnimationFrame(animationLoop);
+  finishedLevel();
 };
