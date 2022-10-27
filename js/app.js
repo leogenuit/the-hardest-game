@@ -98,12 +98,6 @@ function deadFence() {
     // console.log("you're died :(");
   }
 }
-function newLevel() {
-  levelIndex++;
-  createNewLevel();
-
-  respawn();
-}
 function deadBall(ball) {
   const isInY =
     player.position.y < ball.position.y + ball.height &&
@@ -117,6 +111,13 @@ function deadBall(ball) {
     console.log("dead");
   }
 }
+function newLevel() {
+  levelIndex++;
+  createNewLevel();
+
+  respawn();
+}
+
 
 function bounceBall() {
   groupOfBalls.forEach((ball) => {
